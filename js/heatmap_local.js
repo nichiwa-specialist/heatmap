@@ -39,7 +39,16 @@ $(document).ready(function() {
 	var count = 0;
 	setInterval(function() {
 		$.get(list[count], function(data) {
-			console.log("★　"+ data);
+			console.log(data);
+			data = data.replace(/\\n/g, "\\n") 
+				.replace(/\\'/g, "\\'")
+				.replace(/\\"/g, '\\"')
+				.replace(/\\&/g, "\\&")
+				.replace(/\\r/g, "\\r")
+				.replace(/\\t/g, "\\t")
+				.replace(/\\b/g, "\\b")
+				.replace(/\\f/g, "\\f");
+			data = data.replace(/[\u0000-\u0019]+/g,"");
 			var json = $.parseJSON(data);
 			// 日付取得
 			var date = list[count].split("/")[1].split(".")[0];
