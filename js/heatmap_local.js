@@ -26,7 +26,6 @@ $(document).ready(function() {
 	// フォルダから一気に取得したい
 	var list = [
 	  "json/20110101.json"
-/*
 	, "json/20110102.json"
 	, "json/20110103.json"
 	, "json/20110104.json"
@@ -36,7 +35,6 @@ $(document).ready(function() {
 	, "json/20110108.json"
 	, "json/20110109.json"
 	, "json/20110110.json"
-*/
 	];
 	var count = 0;
 	setInterval(function() {
@@ -52,16 +50,17 @@ $(document).ready(function() {
 				.replace(/\\b/g, "\\b")
 				.replace(/\\f/g, "\\f");
 			data = data.replace(/[\u0000-\u0019]+/g,"");
-*/
 			var json = $.parseJSON(data);
 			// 日付取得
 			var date = list[count].split("/")[1].split(".")[0];
 			var ymdStr = date.substr(0,4) + "/";
 			ymdStr += date.substr(4,2) + "/";
 			ymdStr += date.substr(6,2) + "";
+*/
 
 			// ヒートマップ反映
-			heatmap.setData(json);
+//			heatmap.setData(json);
+			heatmap.setData(data);
 			$("#date").text(ymdStr);
 			
 			count++;
