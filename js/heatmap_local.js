@@ -39,6 +39,7 @@ $(document).ready(function() {
 	var count = 0;
 	setInterval(function() {
 		$.get(list[count], function(data) {
+			console.log(data);
 			var json = $.parseJSON(data);
 			// 日付取得
 			var date = list[count].split("/")[1].split(".")[0];
