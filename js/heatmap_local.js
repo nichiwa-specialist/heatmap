@@ -25,31 +25,22 @@ $(document).ready(function() {
 	
 	// フォルダから一気に取得したい
 	var list = [
-	  "json/20110101.json"
-	, "json/20110102.json"
-	, "json/20110103.json"
-	, "json/20110104.json"
-	, "json/20110105.json"
-	, "json/20110106.json"
-	, "json/20110107.json"
-	, "json/20110108.json"
-	, "json/20110109.json"
-	, "json/20110110.json"
+	  "json/20110101.txt"
+	, "json/20110102.txt"
+//	, "json/20110103.json"
+//	, "json/20110104.json"
+//	, "json/20110105.json"
+//	, "json/20110106.json"
+//	, "json/20110107.json"
+//	, "json/20110108.json"
+//	, "json/20110109.json"
+//	, "json/20110110.json"
 	];
 	var count = 0;
 	setInterval(function() {
 		$.get(list[count], function(data) {
 			console.log(data);
 /*
-			data = data.replace(/\\n/g, "\\n") 
-				.replace(/\\'/g, "\\'")
-				.replace(/\\"/g, '\\"')
-				.replace(/\\&/g, "\\&")
-				.replace(/\\r/g, "\\r")
-				.replace(/\\t/g, "\\t")
-				.replace(/\\b/g, "\\b")
-				.replace(/\\f/g, "\\f");
-			data = data.replace(/[\u0000-\u0019]+/g,"");
 			var json = $.parseJSON(data);
 			// 日付取得
 			var date = list[count].split("/")[1].split(".")[0];
