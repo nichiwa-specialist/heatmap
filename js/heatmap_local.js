@@ -27,7 +27,7 @@ $(document).ready(function() {
 	var list = [
 	  "json/20110101.txt"
 	, "json/20110102.txt"
-//	, "json/20110103.json"
+	, "json/20110103.json"
 //	, "json/20110104.json"
 //	, "json/20110105.json"
 //	, "json/20110106.json"
