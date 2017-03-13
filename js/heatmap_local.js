@@ -37,20 +37,20 @@ $(document).ready(function() {
 //	, "json/20110110.json"
 	];
 	var count = 0;
-/*
 	setInterval(function() {
 		$.get(list[count], function(data) {
 			console.log(data);
+/*
 			var json = $.parseJSON(data);
 			// 日付取得
 			var date = list[count].split("/")[1].split(".")[0];
 			var ymdStr = date.substr(0,4) + "/";
 			ymdStr += date.substr(4,2) + "/";
 			ymdStr += date.substr(6,2) + "";
-
+*/
 			// ヒートマップ反映
 //			heatmap.setData(json);
-//			heatmap.setData(data);
+			heatmap.setData(data);
 //			$("#date").text(ymdStr);
 			
 			count++;
@@ -61,5 +61,4 @@ $(document).ready(function() {
 			}
 		});
 	}, 2000);
-*/
 });
