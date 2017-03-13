@@ -27,20 +27,18 @@ $(document).ready(function() {
 	var list = [
 	  "json/20110101.txt"
 	, "json/20110102.txt"
-	, "json/20110103.json"
-//	, "json/20110104.json"
-//	, "json/20110105.json"
-//	, "json/20110106.json"
-//	, "json/20110107.json"
-//	, "json/20110108.json"
-//	, "json/20110109.json"
-//	, "json/20110110.json"
+	, "json/20110103.txt"
+	, "json/20110104.txt"
+	, "json/20110105.txt"
+	, "json/20110106.txt"
+	, "json/20110107.txt"
+	, "json/20110108.txt"
+	, "json/20110109.txt"
+	, "json/20110110.txt"
 	];
 	var count = 0;
 	setInterval(function() {
 		$.get(list[count], function(data) {
-			console.log(data);
-			var json = $.parseJSON(data);
 			// 日付取得
 			var date = list[count].split("/")[1].split(".")[0];
 			var ymdStr = date.substr(0,4) + "/";
@@ -48,7 +46,7 @@ $(document).ready(function() {
 			ymdStr += date.substr(6,2) + "";
 
 			// ヒートマップ反映
-			heatmap.setData(json);
+			heatmap.setData($.parseJSON(data));
 //			heatmap.setData(data);
 			$("#date").text(ymdStr);
 			
