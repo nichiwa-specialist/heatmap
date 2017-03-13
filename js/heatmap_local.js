@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 			// ヒートマップ反映
 //			heatmap.setData(json);
-			heatmap.setData(data);
+//			heatmap.setData(data);
 //			$("#date").text(ymdStr);
 			
 			count++;
